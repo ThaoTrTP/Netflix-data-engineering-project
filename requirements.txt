@@ -1,0 +1,18 @@
+# ==== Data manipulation and analysis ====
+pandas>=2.2,<3.0
+numpy>=1.26,<2.0
+
+# ==== Notebooks ====
+jupyterlab>=4.0
+ipykernel>=6.29
+
+# ==== Visualization (for profiling/EDA) ====
+matplotlib>=3.8
+seaborn>=0.13
+
+# ==== Database connectivity (MySQL) ====
+SQLAlchemy>=2.0
+mysql-connector-python>=8.3
+
+# ==== Environment and config management ====
+python-dotenv>=1.0
