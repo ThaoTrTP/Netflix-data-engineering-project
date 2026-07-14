@@ -13,6 +13,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
 from urllib.parse import quote_plus
+import unicodedata
 # 0. Config
 
 load_dotenv() # Read variants from file .env
@@ -57,6 +58,8 @@ def insert_lookup(values: pd.Series, table: str, id_col:str, name_col: str, engi
         .str.split(',')
         .explode()
         .str.strip()
+        .apply(lambda x: unicodedata.normalize('NFC', x)) #Deduplicate'
+        .str.title()
         .unique()
     )
 
